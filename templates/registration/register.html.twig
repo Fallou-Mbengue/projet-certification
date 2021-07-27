@@ -15,7 +15,7 @@
 				class="carousel-inner" role="listbox">
 
 				<!-- Slide 1 -->
-				<div class="carousel-item active" style="background-image: url(assets/img/slide/slide-1.jpg)">
+				<div class="carousel-item active" style="background-image: url(assets/img/slide/irm1.jpg)">
 					<div class="container">
 						<h1>CIDIS</h1>
 						<h3 style="color: black;">Centre D'imagerie Diagnostique et Interventionnelle De Soumbedioune</h3>
@@ -29,22 +29,40 @@
 		<div class="alert alert-danger" role="alert">{{ flashError }}</div>
 	{% endfor %}
 
-	<div class="container center mt-5 mb-5 ms-20 me-20">
-		<h1>Inscription Nouveaux Patient</h1>
+	<section id="appointment" class="appointment section-bg">
+		<div class="container" data-aos="fade-up">
+			<div class="section-title">
+				<h2>Inscription Nouveaux Patient</h2>
+			</div>
 
-		{{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.prenom) }}
-        {{ form_row(registrationForm.nom) }}
-        {{ form_row(registrationForm.naissance) }}
-        {{ form_row(registrationForm.telephone) }}
-        {{ form_row(registrationForm.adresse) }}
-		{{ form_row(registrationForm.email) }}
-		{{ form_row(registrationForm.plainPassword, {
+			{{ form_start(registrationForm) }}
+			{{ form_row(registrationForm.prenom, {
+			label: 'Prénom'
+		}) }}
+			{{ form_row(registrationForm.nom, {
+			label: 'Nom'
+		}) }}
+			{{ form_row(registrationForm.naissance,{
+			label: 'Date de Naissance'
+		}) }}
+			{{ form_row(registrationForm.telephone, {
+			label: 'Téléphone'
+		}) }}
+			{{ form_row(registrationForm.adresse, {
+			label: 'Adresse'
+		}) }}
+			{{ form_row(registrationForm.email, {
+			label: 'Email'
+		}) }}
+			{{ form_row(registrationForm.plainPassword, {
             label: 'Password'
         }) }}
-		{{ form_row(registrationForm.agreeTerms) }}
+			{{ form_row(registrationForm.agreeTerms) }}
 
-		<button type="submit" class="btn btn-success">M'INSCRIRE</button>
-		{{ form_end(registrationForm) }}
-	</div>
+			<div class="text-center">
+				<button type="submit" class="btn btn-success">M'INSCRIRE</button>
+			</div>
+			{{ form_end(registrationForm) }}
+		</div>
+	</section>
 {% endblock %}
