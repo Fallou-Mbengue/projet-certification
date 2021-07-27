@@ -45,8 +45,8 @@ class __TwigTemplate_596e5d21884c3b2d408cae33ba29b8d6e11485e939f757b89ebea216e1a
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "appointment/new.html.twig"));
 
-        // line 4
-        $this->env->getRuntime("Symfony\\Component\\Form\\FormRenderer")->setTheme((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 4, $this->source); })()), [0 => "bootstrap_5_layout.html.twig"], true);
+        // line 5
+        $this->env->getRuntime("Symfony\\Component\\Form\\FormRenderer")->setTheme((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 5, $this->source); })()), [0 => "bootstrap_5_layout.html.twig"], true);
         // line 1
         $this->parent = $this->loadTemplate("base.html.twig", "appointment/new.html.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
@@ -68,7 +68,8 @@ class __TwigTemplate_596e5d21884c3b2d408cae33ba29b8d6e11485e939f757b89ebea216e1a
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "NewAppointment";
+        echo "NewAppointment
+";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -77,7 +78,7 @@ class __TwigTemplate_596e5d21884c3b2d408cae33ba29b8d6e11485e939f757b89ebea216e1a
 
     }
 
-    // line 6
+    // line 7
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -87,8 +88,8 @@ class __TwigTemplate_596e5d21884c3b2d408cae33ba29b8d6e11485e939f757b89ebea216e1a
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 7
-        echo "<section id=\"hero\">
+        // line 8
+        echo "\t<section id=\"hero\">
 \t\t<div id=\"heroCarousel\" data-bs-interval=\"5000\" class=\"carousel slide carousel-fade\" data-bs-ride=\"carousel\">
 
 \t\t\t<ol class=\"carousel-indicators\" id=\"hero-carousel-indicators\"></ol>
@@ -107,18 +108,76 @@ class __TwigTemplate_596e5d21884c3b2d408cae33ba29b8d6e11485e939f757b89ebea216e1a
 \t\t\t</div>
 \t\t</div>
 \t</section>
-    <div class=\"container d-flex justify-content-center intro-single mt-5 mb-5\">
-\t\t<div class=\"card col-7\">
-\t\t\t<div class=\"card-header text-center\">
-\t\t\t\t<h3>Prendre rendez-vous</h3>
+\t<!-- ========= Rendez-vous section =========== -->
+\t<section id=\"appointment\" class=\"appointment section-bg\">
+\t\t<div class=\"container\" data-aos=\"fade-up\">
+\t\t\t<div class=\"section-title\">
+\t\t\t\t<h2>PRENDRE RENDEZ-VOUS</h2>
 \t\t\t\t<p>Vous pouvez dès maintenant prendre rendez-vous directement en ligne, avec un professionnel de santé 24h/24 et 7j/7, en seulement quelques clics !</p>
 \t\t\t</div>
 \t\t\t";
-        // line 32
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 32, $this->source); })()), 'form');
+        // line 34
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 34, $this->source); })()), 'form_start');
+        echo "
+\t\t\t<div class=\"row\">
+\t\t\t\t<div class=\"col-md-4 form-group\">
+\t\t\t\t\t";
+        // line 37
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 37, $this->source); })()), "date_rendez_vous", [], "any", false, false, false, 37), 'row');
+        echo "
+\t\t\t\t</div>
+\t\t\t\t<div class=\"col-md-4 form-group mt-3 mt-md-0\">
+\t\t\t\t\t";
+        // line 40
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 40, $this->source); })()), "service", [], "any", false, false, false, 40), 'row');
+        echo "
+\t\t\t\t</div>
+\t\t\t\t<div class=\"col-md-4 form-group mt-3 mt-md-0\">
+\t\t\t\t\t";
+        // line 43
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 43, $this->source); })()), "heure", [], "any", false, false, false, 43), 'row');
+        echo "
+\t\t\t\t</div>
+\t\t\t</div>
+\t\t\t<div class=\"row\">
+\t\t\t\t<div class=\"col-md-4 form-group\">
+\t\t\t\t\t";
+        // line 48
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 48, $this->source); })()), "examen", [], "any", false, false, false, 48), 'row');
+        echo "
+\t\t\t\t</div>
+\t\t\t\t<div class=\"col-md-4 form-group mt-3 mt-md-0\">
+\t\t\t\t\t";
+        // line 51
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 51, $this->source); })()), "type_examen", [], "any", false, false, false, 51), 'row');
+        echo "
+\t\t\t\t</div>
+\t\t\t\t<div class=\"col-md-4 form-group mt-3 mt-md-0\">
+\t\t\t\t\t";
+        // line 54
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 54, $this->source); })()), "medecin", [], "any", false, false, false, 54), 'row');
+        echo "
+\t\t\t\t</div>
+\t\t\t</div>
+\t\t\t<div class=\"form-group mt-3\">
+\t\t\t\t";
+        // line 58
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 58, $this->source); })()), "message", [], "any", false, false, false, 58), 'row');
+        echo "
+\t\t\t</div>
+\t\t\t<div class=\"text-center\">
+\t\t\t\t";
+        // line 61
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 61, $this->source); })()), "save", [], "any", false, false, false, 61), 'row');
+        echo "
+\t\t\t</div>
+\t\t\t";
+        // line 63
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 63, $this->source); })()), 'form_end');
         echo "
 \t\t</div>
-\t</div>\t
+\t</section>
+
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -140,18 +199,19 @@ class __TwigTemplate_596e5d21884c3b2d408cae33ba29b8d6e11485e939f757b89ebea216e1a
 
     public function getDebugInfo()
     {
-        return array (  118 => 32,  91 => 7,  81 => 6,  62 => 3,  51 => 1,  49 => 4,  36 => 1,);
+        return array (  176 => 63,  171 => 61,  165 => 58,  158 => 54,  152 => 51,  146 => 48,  138 => 43,  132 => 40,  126 => 37,  120 => 34,  92 => 8,  82 => 7,  62 => 3,  51 => 1,  49 => 5,  36 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}NewAppointment{% endblock %}
+{% block title %}NewAppointment
+{% endblock %}
 {% form_theme form 'bootstrap_5_layout.html.twig' %}
 
 {% block body %}
-<section id=\"hero\">
+\t<section id=\"hero\">
 \t\t<div id=\"heroCarousel\" data-bs-interval=\"5000\" class=\"carousel slide carousel-fade\" data-bs-ride=\"carousel\">
 
 \t\t\t<ol class=\"carousel-indicators\" id=\"hero-carousel-indicators\"></ol>
@@ -170,16 +230,47 @@ class __TwigTemplate_596e5d21884c3b2d408cae33ba29b8d6e11485e939f757b89ebea216e1a
 \t\t\t</div>
 \t\t</div>
 \t</section>
-    <div class=\"container d-flex justify-content-center intro-single mt-5 mb-5\">
-\t\t<div class=\"card col-7\">
-\t\t\t<div class=\"card-header text-center\">
-\t\t\t\t<h3>Prendre rendez-vous</h3>
+\t<!-- ========= Rendez-vous section =========== -->
+\t<section id=\"appointment\" class=\"appointment section-bg\">
+\t\t<div class=\"container\" data-aos=\"fade-up\">
+\t\t\t<div class=\"section-title\">
+\t\t\t\t<h2>PRENDRE RENDEZ-VOUS</h2>
 \t\t\t\t<p>Vous pouvez dès maintenant prendre rendez-vous directement en ligne, avec un professionnel de santé 24h/24 et 7j/7, en seulement quelques clics !</p>
 \t\t\t</div>
-\t\t\t{{ form(form) }}
+\t\t\t{{ form_start(form) }}
+\t\t\t<div class=\"row\">
+\t\t\t\t<div class=\"col-md-4 form-group\">
+\t\t\t\t\t{{ form_row(form.date_rendez_vous) }}
+\t\t\t\t</div>
+\t\t\t\t<div class=\"col-md-4 form-group mt-3 mt-md-0\">
+\t\t\t\t\t{{ form_row(form.service) }}
+\t\t\t\t</div>
+\t\t\t\t<div class=\"col-md-4 form-group mt-3 mt-md-0\">
+\t\t\t\t\t{{ form_row(form.heure) }}
+\t\t\t\t</div>
+\t\t\t</div>
+\t\t\t<div class=\"row\">
+\t\t\t\t<div class=\"col-md-4 form-group\">
+\t\t\t\t\t{{ form_row(form.examen) }}
+\t\t\t\t</div>
+\t\t\t\t<div class=\"col-md-4 form-group mt-3 mt-md-0\">
+\t\t\t\t\t{{ form_row(form.type_examen) }}
+\t\t\t\t</div>
+\t\t\t\t<div class=\"col-md-4 form-group mt-3 mt-md-0\">
+\t\t\t\t\t{{ form_row(form.medecin) }}
+\t\t\t\t</div>
+\t\t\t</div>
+\t\t\t<div class=\"form-group mt-3\">
+\t\t\t\t{{ form_row(form.message) }}
+\t\t\t</div>
+\t\t\t<div class=\"text-center\">
+\t\t\t\t{{ form_row(form.save) }}
+\t\t\t</div>
+\t\t\t{{ form_end(form) }}
 \t\t</div>
-\t</div>\t
+\t</section>
+
 {% endblock %}
-", "appointment/new.html.twig", "/Applications/XAMPP/xamppfiles/htdocs/medis/templates/appointment/new.html.twig");
+", "appointment/new.html.twig", "/Users/retina/Desktop/git/projet-certification/templates/appointment/new.html.twig");
     }
 }

@@ -109,3 +109,16 @@ ae7846,127.0.0.1,GET,https://127.0.0.1:8000/appointment/new,1627378796,,200
 33d5d8,127.0.0.1,GET,https://127.0.0.1:8000/appointment/assets/img/slide/slide-1.jpg,1627378797,c012e3,404
 c012e3,127.0.0.1,GET,https://127.0.0.1:8000/appointment/assets/img/slide/slide-1.jpg,1627378797,,404
 cb8a5c,127.0.0.1,GET,https://127.0.0.1:8000/appointment,1627378812,,200
+b6b578,127.0.0.1,GET,https://127.0.0.1:8000/,1627412695,,200
+a74634,127.0.0.1,GET,https://127.0.0.1:8000/,1627413830,,200
+99c82d,127.0.0.1,GET,https://127.0.0.1:8000/register,1627413834,,200
+acfd09,127.0.0.1,POST,https://127.0.0.1:8000/register,1627413854,,302
+47f1e5,127.0.0.1,GET,https://127.0.0.1:8000/login,1627413854,,200
+89212f,127.0.0.1,POST,https://127.0.0.1:8000/login,1627413863,,302
+5e03d4,127.0.0.1,GET,https://127.0.0.1:8000/appointment/new,1627413864,1805e0,500
+1805e0,127.0.0.1,GET,https://127.0.0.1:8000/appointment/new,1627413864,,500
+e3099f,127.0.0.1,GET,https://127.0.0.1:8000/appointment/new,1627413948,,200
+72be24,127.0.0.1,GET,https://127.0.0.1:8000/appointment/assets/img/slide/slide-1.jpg,1627413949,bfc2d1,404
+bfc2d1,127.0.0.1,GET,https://127.0.0.1:8000/appointment/assets/img/slide/slide-1.jpg,1627413949,,404
+48aa1c,127.0.0.1,POST,https://127.0.0.1:8000/appointment/new,1627413967,,302
+734078,127.0.0.1,GET,https://127.0.0.1:8000/,1627413968,,200

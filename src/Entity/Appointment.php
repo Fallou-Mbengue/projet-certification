@@ -18,31 +18,6 @@ class Appointment
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $nom;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $prenom;
-
-    /**
-     * @ORM\Column(type="date")
-     */
-    private $date_naiss;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $email;
-
-    /**
-     * @ORM\Column(type="integer")
-     */
-    private $numero;
-
-    /**
      * @ORM\Column(type="date")
      */
     private $date_rv;
@@ -65,71 +40,27 @@ class Appointment
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $adresse;
+    private $service;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $heure;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $type_examen;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Patient::class, inversedBy="appointment")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $patient;
 
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function getNom(): ?string
-    {
-        return $this->nom;
-    }
-
-    public function setNom(string $nom): self
-    {
-        $this->nom = $nom;
-
-        return $this;
-    }
-
-    public function getPrenom(): ?string
-    {
-        return $this->prenom;
-    }
-
-    public function setPrenom(string $prenom): self
-    {
-        $this->prenom = $prenom;
-
-        return $this;
-    }
-
-    public function getDateNaiss(): ?\DateTimeInterface
-    {
-        return $this->date_naiss;
-    }
-
-    public function setDateNaiss(\DateTimeInterface $date_naiss): self
-    {
-        $this->date_naiss = $date_naiss;
-
-        return $this;
-    }
-
-    public function getEmail(): ?string
-    {
-        return $this->email;
-    }
-
-    public function setEmail(string $email): self
-    {
-        $this->email = $email;
-
-        return $this;
-    }
-
-    public function getNumero(): ?int
-    {
-        return $this->numero;
-    }
-
-    public function setNumero(int $numero): self
-    {
-        $this->numero = $numero;
-
-        return $this;
     }
 
     public function getDateRv(): ?\DateTimeInterface
@@ -180,14 +111,50 @@ class Appointment
         return $this;
     }
 
-    public function getAdresse(): ?string
+    public function getService(): ?string
     {
-        return $this->adresse;
+        return $this->service;
     }
 
-    public function setAdresse(string $adresse): self
+    public function setService(string $service): self
     {
-        $this->adresse = $adresse;
+        $this->service = $service;
+
+        return $this;
+    }
+
+    public function getHeure(): ?string
+    {
+        return $this->heure;
+    }
+
+    public function setHeure(string $heure): self
+    {
+        $this->heure = $heure;
+
+        return $this;
+    }
+
+    public function getTypeExamen(): ?string
+    {
+        return $this->type_examen;
+    }
+
+    public function setTypeExamen(string $type_examen): self
+    {
+        $this->type_examen = $type_examen;
+
+        return $this;
+    }
+
+    public function getPatient(): ?Patient
+    {
+        return $this->patient;
+    }
+
+    public function setPatient(?Patient $patient): self
+    {
+        $this->patient = $patient;
 
         return $this;
     }
