@@ -1,0 +1,426 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Projet
+{% endblock %}
+
+{% block body %}
+
+	<!-- ======= Hero Section ======= -->
+	<section id="hero">
+		<div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+			<ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+
+			<div
+				class="carousel-inner" role="listbox">
+
+				<!-- Slide 1 -->
+				<div class="carousel-item active" style="background-image: url(assets/img/slide/slide-1.jpg)">
+					<div class="container">
+						<h1>CIDIS</h1>
+						<h3 style="color: black;">Centre D'imagerie Diagnostique et Interventionnelle De Soumbedioune</h3>
+						<a href="#about" class="btn-get-started scrollto">Lire la suite</a>
+					</div>
+				</div>
+
+				<!-- Slide 2 -->
+				<div class="carousel-item" style="background-image: url(assets/img/slide/slide-2.jpg)">
+					<div class="container">
+						<h1>CIDIS</h1>
+						<h3 style="color: black;">Centre D'imagerie Diagnostique et Interventionnelle De Soumbedioune</h3>
+						<a href="#about" class="btn-get-started scrollto">Lire la suite</a>
+					</div>
+				</div>
+
+				<!-- Slide 3 -->
+				<div class="carousel-item" style="background-image: url(assets/img/slide/slide-3.jpg)">
+					<div class="container">
+						<h1>CIDIS</h1>
+						<h3 style="color: black;">Centre D'imagerie Diagnostique et Interventionnelle De Soumbedioune</h3>
+						<a href="#about" class="btn-get-started scrollto">Lire la suite</a>
+					</div>
+				</div>
+
+			</div>
+
+			<a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+				<span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+			</a>
+
+			<a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+				<span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+			</a>
+
+		</div>
+	</section>
+	<!-- End Hero -->
+
+	<main
+		id="main">
+
+		<!-- ======= Featured Services Section ======= -->
+		<section id="featured-services" class="featured-services">
+			<div class="container" data-aos="fade-up">
+
+				<div class="row">
+					<div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+						<div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+							<div class="icon">
+								<i class="fas fa-heartbeat"></i>
+							</div>
+							<h4 class="title">
+								<a href="">Radiographie</a>
+							</h4>
+							<p class="description">
+								Technique d'imagerie de transmission, par rayons X dans le cadre de la radiographie X.</p>
+						</div>
+					</div>
+
+					<div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+						<div class="icon-box" data-aos="fade-up" data-aos-delay="200">
+							<div class="icon">
+								<i class="fas fa-pills"></i>
+							</div>
+							<h4 class="title">
+								<a href="">Mammographie</a>
+							</h4>
+							<p class="description">Modalité de l'image médicale mettant en œuvre la radiographie des seins.</p>
+						</div>
+					</div>
+
+					<div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+						<div class="icon-box" data-aos="fade-up" data-aos-delay="300">
+							<div class="icon">
+								<i class="fas fa-thermometer"></i>
+							</div>
+							<h4 class="title">
+								<a href="">Scanner</a>
+							</h4>
+							<p class="description">Appareil d'imagerie médicale qui utilise des rayons X.</p>
+						</div>
+					</div>
+
+					<div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+						<div class="icon-box" data-aos="fade-up" data-aos-delay="400">
+							<div class="icon">
+								<i class="fas fa-dna"></i>
+							</div>
+							<h4 class="title">
+								<a href="">Radiologie Interventionnelle</a>
+							</h4>
+							<p class="description">Spécialité de la radiologie. Elle désigne l'ensemble des actes médicaux réalisés par des radiologues.</p>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+		</section>
+		<!-- End Featured Services Section -->
+
+		<!-- ======= Cta Section ======= -->
+		<section id="cta" class="cta">
+			<div class="container" data-aos="zoom-in">
+
+				<div class="text-center">
+					<h3>Bienvenue au Centre D'imagerie Médical CIDIS</h3>
+					<p></p>
+					<a class="cta-btn scrollto" href="/appointment">PRENDRE RENDEZ-VOUS</a>
+				</div>
+
+			</div>
+		</section>
+		<!-- End Cta Section -->
+
+		<!-- ======= About Us Section ======= -->
+		<section id="about" class="about">
+			<div class="container" data-aos="fade-up">
+
+				<div class="section-title">
+					<h2>À PROPOS DE NOUS</h2>
+					<h4>Cidis est un centre d’imagerie médical avec des médecins spécialistes renommés dans le domaine.</h4>
+				</div>
+
+				<div class="row">
+					<div class="col-lg-6" data-aos="fade-right">
+						<img src="{{asset('assets/img/2.png')}}" class="img-fluid" alt="">
+					</div>
+					<div class="col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-left">
+						<h3>Des techniciens compétents et expérimentés dans le domaine</h3>
+						<p class="fst-italic">
+							Pour une meilleur traitement et de prise en charge des nos patients.
+						</p>
+						<ul>
+							<li>
+								<i class="bi bi-check-circle"></i>
+								<strong style="color: red;">Urgence 24h/24.</strong>
+							</li>
+							<li>
+								<i class="bi bi-check-circle"></i>
+								<strong style="color: red;">
+									Interprétation et disponibilité des résultats</strong>
+							</li>
+							<li>
+								<i class="bi bi-check-circle"></i>
+								<strong style="color: red;">Facilité la prise en charge personnalisée</strong>
+							</li>
+						</ul>
+						<p>
+							Nos services offrent tous les moyens existants en termes de dépistage et de diagnostic médical complet. 
+																																			              CIDIS associe des équipements de dernière technologie au savoir-faire pluridisciplinaire des équipes, 
+																																			              autour de trois exigences fortes : Qualité médicale, sécurité et confort du patient et Facilité de prise en charge personnalisée.
+						</p>
+					</div>
+				</div>
+
+			</div>
+		</section>
+		<!-- End About Us Section -->
+
+		<!-- ======= Counts Section ======= -->
+		<section id="counts" class="counts">
+			<div class="container" data-aos="fade-up">
+
+				<div class="row no-gutters">
+
+					<div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
+						<div class="count-box">
+							<i class="fas fa-user-md"></i>
+							<span data-purecounter-start="0" data-purecounter-end="05" data-purecounter-duration="1" class="purecounter"></span>
+
+							<p>
+								<strong>Médecins</strong>
+								spécialistes radiologues</p>
+							<a href="#">
+								En savoir plus &raquo;</a>
+						</div>
+					</div>
+
+					<div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
+						<div class="count-box">
+							<i class="far fa-hospital"></i>
+							<span data-purecounter-start="0" data-purecounter-end="06" data-purecounter-duration="1" class="purecounter"></span>
+							<p>
+								<strong>Services</strong>
+								de diagnostique et dintervention</p>
+							<a href="#">Find out more &raquo;</a>
+						</div>
+					</div>
+
+					<div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
+						<div class="count-box">
+							<i class="fas fa-flask"></i>
+							<span data-purecounter-start="0" data-purecounter-end="14" data-purecounter-duration="1" class="purecounter"></span>
+							<p>
+								<strong>Research Lab</strong>
+								aut commodi quaerat. Aliquam ratione</p>
+							<a href="#">Find out more &raquo;</a>
+						</div>
+					</div>
+
+					<div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
+						<div class="count-box">
+							<i class="fas fa-award"></i>
+							<span data-purecounter-start="0" data-purecounter-end="150" data-purecounter-duration="1" class="purecounter"></span>
+							<p>
+								<strong>Awards</strong>
+								rerum asperiores dolor molestiae doloribu</p>
+							<a href="#">Find out more &raquo;</a>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+		</section>
+		<!-- End Counts Section -->
+
+		<!-- ======= Features Section ======= -->
+		<section id="features" class="features">
+			<div class="container" data-aos="fade-up">
+
+				<div class="row">
+					<div class="col-lg-6 order-2 order-lg-1" data-aos="fade-right">
+						<div class="icon-box mt-5 mt-lg-0">
+							<i class="bx bx-receipt"></i>
+							<h4>Imagerie</h4>
+							<p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
+						</div>
+						<div class="icon-box mt-5">
+							<i class="bx bx-cube-alt"></i>
+							<h4>Scanner</h4>
+							<p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
+						</div>
+						<div class="icon-box mt-5">
+							<i class="bx bx-images"></i>
+							<h4>IRM</h4>
+							<p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p>
+						</div>
+						<div class="icon-box mt-5">
+							<i class="bx bx-shield"></i>
+							<h4>Radiologie</h4>
+							<p>Expedita veritatis consequuntur nihil tempore laudantium vitae denat pacta</p>
+						</div>
+					</div>
+					<div class="image col-lg-6 order-1 order-lg-2" style='background-image: url("assets/img/gallery/gallery-7.jpg");' data-aos="zoom-in"></div>
+				</div>
+
+			</div>
+		</section>
+		<!-- End Features Section -->
+
+		<!-- ======= Services Section ======= -->
+		<section id="services" class="services services">
+			<div class="container" data-aos="fade-up">
+
+				<div class="section-title">
+					<h2>Services</h2>
+					<p></p>
+				</div>
+
+				<div class="row">
+					<div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="100">
+						<div class="icon">
+							<i class="fas fa-heartbeat"></i>
+						</div>
+						<h4 class="title">
+							<a href="">Radiographie</a>
+						</h4>
+						<p class="description">
+							La radiographie est une technique d'imagerie de transmission, par rayons X dans le cadre de la radiographie X, ou par rayons gamma en gammagraphie.Enregistrement photographique de la structure d'un corps traversé par des rayons X.</p>
+					</div>
+					<div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="200">
+						<div class="icon">
+							<i class="fas fa-pills"></i>
+						</div>
+						<h4 class="title">
+							<a href="">Mommographie</a>
+						</h4>
+						<p class="description">La mammographie est une modalité de l'image médicale mettant en œuvre la radiographie des seins. Elle permet d'obtenir des images des tissus intérieur et ainsi de détecter d’éventuelles anomalies, notamment des nodules, qui peuvent être signes d'un cancer du sein.</p>
+					</div>
+					<div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="300">
+						<div class="icon">
+							<i class="fas fa-hospital-user"></i>
+						</div>
+						<h4 class="title">
+							<a href="">Echographie Doppler</a>
+						</h4>
+						<p class="description">L'échographie Doppler est un examen médical échographique en deux dimensions non invasif qui permet d'explorer les flux sanguins intracardiaques et intravasculaires.</p>
+					</div>
+					<div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="100">
+						<div class="icon">
+							<i class="fas fa-dna"></i>
+						</div>
+						<h4 class="title">
+							<a href="">Panoramique Dentaire</a>
+						</h4>
+						<p class="description">Un orthopantomogramme, abrégé par les sigles OPT ou OPG, est une radiographie panoramique de toute la denture. À ce titre, cet examen est plus souvent appelé « panoramique dentaire ». Il consiste en une mise à plat de l'arc dentaire, d'une oreille à une autre</p>
+					</div>
+					<div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="200">
+						<div class="icon">
+							<i class="fas fa-wheelchair"></i>
+						</div>
+						<h4 class="title">
+							<a href="">Scanner</a>
+						</h4>
+						<p class="description">Un scanner est un appareil d'imagerie médicale qui utilise des rayons X. L'examen réalisé s'appelle par analogie un scanner ou un examen tomodensitométrique (TDM). Le scanner permet de réaliser l'ensemble des examens traditionnels pour ce type d'appareil.</p>
+					</div>
+					<div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="300">
+						<div class="icon">
+							<i class="fas fa-notes-medical"></i>
+						</div>
+						<h4 class="title">
+							<a href="">Radiologie Interventionnelle</a>
+						</h4>
+						<p class="description">La radiologie interventionnelle est une spécialité de la radiologie. Elle désigne l'ensemble des actes médicaux réalisés par des radiologues et sous contrôle radiologique, permettant le traitement ou le diagnostic invasif de nombreuses pathologies.</p>
+					</div>
+				</div>
+
+			</div>
+		</section>
+		<!-- End Services Section -->
+
+		<!-- ======= Contact Section ======= -->
+		<section id="contact" class="contact">
+			<div class="container">
+
+				<div class="section-title">
+					<h2>Contact</h2>
+					<p>Pour tous informatons complémentaire veuillez nous contacter aux adresses suivants.</p>
+				</div>
+
+			</div>
+
+			<div>
+				<iframe style="border:0; width: 100%; height: 350px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3859.5965661644254!2d-17.464961985961526!3d14.678821879092169!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xec17263dc18beed%3A0x3a7d82bd7eaae8ae!2sCIDIS!5e0!3m2!1sfr!2ssn!4v1622844126485!5m2!1sfr!2ssn" frameborder="0" allowfullscreen></iframe>
+			</div>
+
+			<div class="container">
+
+				<div class="row mt-5">
+
+					<div class="col-lg-6">
+
+						<div class="row">
+							<div class="col-md-12">
+								<div class="info-box">
+									<i class="bx bx-map"></i>
+									<h3>Notre adresse</h3>
+									<p>FANN HOCK</p>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="info-box mt-4">
+									<i class="bx bx-envelope"></i>
+									<h3>Envoyez-nous un email</h3>
+									<p>cidisarl@yahoo.fr<br>cidisarl@yahoo.fr</p>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="info-box mt-4">
+									<i class="bx bx-phone-call"></i>
+									<h3>Appelez-nous</h3>
+									<p>+221 33 821 21 50<br>+221 77 877 95 55</p>
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+					<div class="col-lg-6">
+						<form action="forms/contact.php" method="post" role="form" class="php-email-form">
+							<div class="row">
+								<div class="col form-group">
+									<input type="text" name="name" class="form-control" id="name" placeholder="Votre Nom" required>
+								</div>
+								<div class="col form-group mt-3">
+									<input type="email" class="form-control" name="email" id="email" placeholder="Votre Email" required>
+								</div>
+							</div>
+							<div class="form-group mt-3">
+								<input type="text" class="form-control" name="subject" id="subject" placeholder="Object" required>
+							</div>
+							<div class="form-group mt-3">
+								<textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+							</div>
+							<div class="my-3">
+								<div class="loading">Loading</div>
+								<div class="error-message"></div>
+								<div class="sent-message">Your message has been sent. Thank you!</div>
+							</div>
+							<div class="text-center">
+								<button type="submit">Envoyer Message</button>
+							</div>
+						</form>
+					</div>
+
+				</div>
+
+			</div>
+		</section>
+		<!-- End Contact Section -->
+	</main>
+	<!-- End #main -->
+
+
+{% endblock %}

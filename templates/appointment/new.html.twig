@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}NewAppointment{% endblock %}
+{% form_theme form 'bootstrap_5_layout.html.twig' %}
+
+{% block body %}
+<section id="hero">
+		<div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+			<ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+
+			<div
+				class="carousel-inner" role="listbox">
+
+				<!-- Slide 1 -->
+				<div class="carousel-item active" style="background-image: url(assets/img/slide/slide-1.jpg)">
+					<div class="container">
+						<h1>CIDIS</h1>
+						<h3 style="color: black;">Centre D'imagerie Diagnostique et Interventionnelle De Soumbedioune</h3>
+						<a href="#appointment" class="btn-get-started scrollto">Prendre Rendez-vous</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+    <div class="container d-flex justify-content-center intro-single mt-5 mb-5">
+		<div class="card col-7">
+			<div class="card-header text-center">
+				<h3>Prendre rendez-vous</h3>
+				<p>Vous pouvez dès maintenant prendre rendez-vous directement en ligne, avec un professionnel de santé 24h/24 et 7j/7, en seulement quelques clics !</p>
+			</div>
+			{{ form(form) }}
+		</div>
+	</div>	
+{% endblock %}
