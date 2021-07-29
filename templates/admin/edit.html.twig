@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register
+{% endblock %}
+{% form_theme registrationForm 'bootstrap_5_layout.html.twig' %}
+
+{% block body %}
+
+	<section id="hero">
+		<div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+			<ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+
+			<div
+				class="carousel-inner" role="listbox">
+
+				<!-- Slide 1 -->
+				<div class="carousel-item active" style="background-image: url(assets/img/slide/irm1.jpg)">
+					<div class="container">
+						<h1>Edition Patient</h1>
+						<h3 style="color: black;">Centre D'imagerie Diagnostique et Interventionnelle De Soumbedioune</h3>
+						<a href="#appointment" class="btn-get-started scrollto">Modification Information</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	{% for flashError in app.flashes('verify_email_error') %}
+		<div class="alert alert-danger" role="alert">{{ flashError }}</div>
+	{% endfor %}
+
+	<section id="appointment" class="appointment section-bg">
+		<div class="container" data-aos="fade-up">
+			<div class="section-title">
+				<h2>Modification Information Patient</h2>
+			</div>
+
+			{{ form_start(registrationForm) }}
+			{{ form_row(registrationForm.prenom, {
+			label: 'Prénom'
+		}) }}
+			{{ form_row(registrationForm.nom, {
+			label: 'Nom'
+		}) }}
+			{{ form_row(registrationForm.naissance,{
+			label: 'Date de Naissance'
+		}) }}
+			{{ form_row(registrationForm.telephone, {
+			label: 'Téléphone'
+		}) }}
+			{{ form_row(registrationForm.adresse, {
+			label: 'Adresse'
+		}) }}
+			{{ form_row(registrationForm.email, {
+			label: 'Email'
+		}) }}
+			{{ form_row(registrationForm.plainPassword, {
+            label: 'Password'
+        }) }}
+			{{ form_row(registrationForm.agreeTerms) }}
+
+			<div class="text-center">
+				<button type="submit" class="btn btn-success">Modifier</button>
+			</div>
+			{{ form_end(registrationForm) }}
+		</div>
+	</section>
+{% endblock %}

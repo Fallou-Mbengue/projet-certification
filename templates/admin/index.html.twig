@@ -1,0 +1,71 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Administration{% endblock %}
+
+{% block body %}
+<section id="hero">
+		<div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+			<ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+
+			<div
+				class="carousel-inner" role="listbox">
+
+				<!-- Slide 1 -->
+				<div class="carousel-item active" style="background-image: url(assets/img/slide/slide-1.jpg)">
+					<div class="container">
+						<h1>ADMINISTRATION</h1>
+						<h3 style="color: black;">Centre D'imagerie Diagnostique et Interventionnelle De Soumbedioune</h3>
+						<a href="#appointment" class="btn-get-started scrollto">Administration</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+    <!--========== section tableaux administration ====  -->
+    <div class="container-fluid my-5">
+		<div class="row">
+			{% if patients is not empty %}
+				<table class="table table-striped table-dark">
+					<thead>
+						<tr>
+							<th>Id</th>
+							<th>Prenom</th>
+							<th>Nom</th>
+							<th>Adresse</th>
+							<th>Email</th>
+							<th>Delete</th>
+							<th>Update</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for patient in patients %}
+							<tr>
+
+								<td>{{ patient.id}}</td>
+								<td>{{ patient.prenom}}</td>
+								<td>{{ patient.nom}}</td>
+								<td>{{ patient.adresse}}</td>
+                                <td>{{ patient.email}}</td>
+								<td>
+									<a href="{{path('delete_patient',{'id': patient.id})}}" class="btn btn-danger">
+										<i class="fas fa-trash"></i>
+									</a>
+								</td>
+								<td>
+									<a href="{{path('edit_patient',{'id': patient.id})}}" class="btn btn-success">
+										<i class="fas fa-edit"></i>
+									</a>
+								</td>
+							</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			{% else %}
+				<p>No article found.</p>
+			{% endif %}
+		</div>
+	</div>
+    
+{% endblock %}
