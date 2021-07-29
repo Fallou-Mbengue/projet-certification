@@ -97,7 +97,7 @@ class __TwigTemplate_ff1df232420866ae1f742badbfee372d680404293545a5edd9b2c721341
 \t\t\t\tclass=\"carousel-inner\" role=\"listbox\">
 
 \t\t\t\t<!-- Slide 1 -->
-\t\t\t\t<div class=\"carousel-item active\" style=\"background-image: url(assets/img/slide/slide-1.jpg)\">
+\t\t\t\t<div class=\"carousel-item active\" style=\"background-image: url(assets/img/slide/irm1.jpg)\">
 \t\t\t\t\t<div class=\"container\">
 \t\t\t\t\t\t<h1>CIDIS</h1>
 \t\t\t\t\t\t<h3 style=\"color: black;\">Centre D'imagerie Diagnostique et Interventionnelle De Soumbedioune</h3>
@@ -238,7 +238,7 @@ class __TwigTemplate_ff1df232420866ae1f742badbfee372d680404293545a5edd9b2c721341
 \t\t\t\tclass=\"carousel-inner\" role=\"listbox\">
 
 \t\t\t\t<!-- Slide 1 -->
-\t\t\t\t<div class=\"carousel-item active\" style=\"background-image: url(assets/img/slide/slide-1.jpg)\">
+\t\t\t\t<div class=\"carousel-item active\" style=\"background-image: url(assets/img/slide/irm1.jpg)\">
 \t\t\t\t\t<div class=\"container\">
 \t\t\t\t\t\t<h1>CIDIS</h1>
 \t\t\t\t\t\t<h3 style=\"color: black;\">Centre D'imagerie Diagnostique et Interventionnelle De Soumbedioune</h3>
