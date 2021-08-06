@@ -2080,6 +2080,6 @@ class __TwigTemplate_52b1d0a70f559451cf20e008d2a0a6bfde21dcd53d6095a26c9129613aa
         {{ tree.form_tree_details(childName, childData, forms_by_hash) }}
     {% endfor %}
 {% endmacro %}
-", "@WebProfiler/Collector/form.html.twig", "/Applications/XAMPP/xamppfiles/htdocs/medis/vendor/symfony/web-profiler-bundle/Resources/views/Collector/form.html.twig");
+", "@WebProfiler/Collector/form.html.twig", "/Users/retina/Desktop/git/projet-certification/vendor/symfony/web-profiler-bundle/Resources/views/Collector/form.html.twig");
     }
 }

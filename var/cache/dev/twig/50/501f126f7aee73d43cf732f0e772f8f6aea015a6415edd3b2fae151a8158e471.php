@@ -607,6 +607,6 @@ $context["key"], "hit_read_ratio"))) {
         </div>
     {% endif %}
 {% endblock %}
-", "@WebProfiler/Collector/cache.html.twig", "/Applications/XAMPP/xamppfiles/htdocs/medis/vendor/symfony/web-profiler-bundle/Resources/views/Collector/cache.html.twig");
+", "@WebProfiler/Collector/cache.html.twig", "/Users/retina/Desktop/git/projet-certification/vendor/symfony/web-profiler-bundle/Resources/views/Collector/cache.html.twig");
     }
 }

@@ -644,6 +644,6 @@ class __TwigTemplate_2dfc24628a34b5b6090116850ea6b9e0390bae3575f491de0866047a09f
         </div>
     {% endfor %}
 {% endblock %}
-", "@WebProfiler/Collector/notifier.html.twig", "/Applications/XAMPP/xamppfiles/htdocs/medis/vendor/symfony/web-profiler-bundle/Resources/views/Collector/notifier.html.twig");
+", "@WebProfiler/Collector/notifier.html.twig", "/Users/retina/Desktop/git/projet-certification/vendor/symfony/web-profiler-bundle/Resources/views/Collector/notifier.html.twig");
     }
 }

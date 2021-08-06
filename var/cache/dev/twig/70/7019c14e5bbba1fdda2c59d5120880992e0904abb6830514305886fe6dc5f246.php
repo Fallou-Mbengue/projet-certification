@@ -174,6 +174,6 @@ class __TwigTemplate_c9cc1463c3fb97ae0f26df86438739a0c7b5d99839c6efeae1c389aecf5
         {% endif %}
     </div>
 {% endblock %}
-", "@WebProfiler/Profiler/open.html.twig", "/Applications/XAMPP/xamppfiles/htdocs/medis/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/open.html.twig");
+", "@WebProfiler/Profiler/open.html.twig", "/Users/retina/Desktop/git/projet-certification/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/open.html.twig");
     }
 }

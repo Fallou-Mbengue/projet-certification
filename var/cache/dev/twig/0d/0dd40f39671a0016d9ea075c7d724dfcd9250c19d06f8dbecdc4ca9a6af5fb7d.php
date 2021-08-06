@@ -227,6 +227,6 @@ class __TwigTemplate_6dffd86b2953bc6fdf6c52e6257916371167f6a5fc4b276564e9cbee2dc
         </div>
     {% endif %}
 {% endblock %}
-", "@WebProfiler/Collector/exception.html.twig", "/Applications/XAMPP/xamppfiles/htdocs/medis/vendor/symfony/web-profiler-bundle/Resources/views/Collector/exception.html.twig");
+", "@WebProfiler/Collector/exception.html.twig", "/Users/retina/Desktop/git/projet-certification/vendor/symfony/web-profiler-bundle/Resources/views/Collector/exception.html.twig");
     }
 }

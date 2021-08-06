@@ -94,6 +94,6 @@ class __TwigTemplate_f218d7e445bf45b16106eb9f538a62fcd763a7ce44fc934ade0a1a67177
 <p>
     Cheers!
 </p>
-", "registration/confirmation_email.html.twig", "/Applications/XAMPP/xamppfiles/htdocs/medis/templates/registration/confirmation_email.html.twig");
+", "registration/confirmation_email.html.twig", "/Users/retina/Desktop/git/projet-certification/templates/registration/confirmation_email.html.twig");
     }
 }

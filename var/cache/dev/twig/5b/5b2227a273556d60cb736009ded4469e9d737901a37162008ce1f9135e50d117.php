@@ -1671,6 +1671,6 @@ class __TwigTemplate_4fcc27aa44873ff06a245e77042e5297e7351f3fc084bbf7d328331833f
         </tbody>
     </table>
 {% endmacro %}
-", "@Doctrine/Collector/db.html.twig", "/Applications/XAMPP/xamppfiles/htdocs/medis/vendor/doctrine/doctrine-bundle/Resources/views/Collector/db.html.twig");
+", "@Doctrine/Collector/db.html.twig", "/Users/retina/Desktop/git/projet-certification/vendor/doctrine/doctrine-bundle/Resources/views/Collector/db.html.twig");
     }
 }

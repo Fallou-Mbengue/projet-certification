@@ -471,6 +471,6 @@ class __TwigTemplate_6edbb6ad78c60b8190372c6cd3f66c51b5dd62515be7c7fea6b865fe94c
         </div>
     {% endif %}
 {% endblock %}
-", "@WebProfiler/Collector/twig.html.twig", "/Applications/XAMPP/xamppfiles/htdocs/medis/vendor/symfony/web-profiler-bundle/Resources/views/Collector/twig.html.twig");
+", "@WebProfiler/Collector/twig.html.twig", "/Users/retina/Desktop/git/projet-certification/vendor/symfony/web-profiler-bundle/Resources/views/Collector/twig.html.twig");
     }
 }

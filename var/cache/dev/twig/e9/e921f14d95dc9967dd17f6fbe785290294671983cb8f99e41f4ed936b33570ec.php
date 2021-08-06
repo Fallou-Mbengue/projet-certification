@@ -171,6 +171,6 @@ class __TwigTemplate_68f755de0b55574266c0cc2547e31ea5bcdb8422e144079efbfdb8fea73
         {%- endfor -%}
     </pre>
 {% endif %}
-", "@Doctrine/Collector/explain.html.twig", "/Applications/XAMPP/xamppfiles/htdocs/medis/vendor/doctrine/doctrine-bundle/Resources/views/Collector/explain.html.twig");
+", "@Doctrine/Collector/explain.html.twig", "/Users/retina/Desktop/git/projet-certification/vendor/doctrine/doctrine-bundle/Resources/views/Collector/explain.html.twig");
     }
 }
