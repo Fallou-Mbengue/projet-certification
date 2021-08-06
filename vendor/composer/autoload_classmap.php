@@ -3102,7 +3102,6 @@ return array(
     'Symfony\\Component\\Cache\\Traits\\ContractsTrait' => $vendorDir . '/symfony/cache/Traits/ContractsTrait.php',
     'Symfony\\Component\\Cache\\Traits\\FilesystemCommonTrait' => $vendorDir . '/symfony/cache/Traits/FilesystemCommonTrait.php',
     'Symfony\\Component\\Cache\\Traits\\FilesystemTrait' => $vendorDir . '/symfony/cache/Traits/FilesystemTrait.php',
-    'Symfony\\Component\\Cache\\Traits\\MemcachedTrait' => $vendorDir . '/symfony/cache/Traits/MemcachedTrait.php',
     'Symfony\\Component\\Cache\\Traits\\ProxyTrait' => $vendorDir . '/symfony/cache/Traits/ProxyTrait.php',
     'Symfony\\Component\\Cache\\Traits\\RedisClusterNodeProxy' => $vendorDir . '/symfony/cache/Traits/RedisClusterNodeProxy.php',
     'Symfony\\Component\\Cache\\Traits\\RedisClusterProxy' => $vendorDir . '/symfony/cache/Traits/RedisClusterProxy.php',
