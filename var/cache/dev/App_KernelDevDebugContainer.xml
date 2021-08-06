@@ -335,6 +335,7 @@
       <tag name="controller.service_arguments"/>
       <tag name="routing.route_loader"/>
     </service>
+    <service id="App\Controller\AdminController" class="App\Controller\AdminController" autowire="true" autoconfigure="true"/>
     <service id="App\Controller\AppointmentController" class="App\Controller\AppointmentController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
