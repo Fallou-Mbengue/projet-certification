@@ -86,11 +86,11 @@
         "post-install-cmd": [
             "@auto-scripts"
         ],
-        "post-update-cmd": [
-            "@auto-scripts"
-        ],
         "compile": [
             "php bin/console doctrine:schema:update --force"
+        ],
+        "post-update-cmd": [
+            "@auto-scripts"
         ]
 
     },
