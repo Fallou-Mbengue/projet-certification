@@ -94,7 +94,7 @@ class __TwigTemplate_841366f399401584f8c000c1028fbd644ef839ff70468d235e697339529
             $context["is_authenticated"] = (twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 7, $this->source); })()), "enabled", [], "any", false, false, false, 7) && twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 7, $this->source); })()), "authenticated", [], "any", false, false, false, 7));
             // line 8
             echo "        ";
-            $context["color_code"] = (((isset($context["is_authenticated"]) || array_key_exists("is_authenticated", $context) ? $context["is_authenticated"] : (function () { throw new RuntimeError('Variable "is_authenticated" does not exist.', 8, $this->source); })())) ? ("") : ("yellow"));
+            $context["color_code"] = (( !(isset($context["is_authenticated"]) || array_key_exists("is_authenticated", $context) ? $context["is_authenticated"] : (function () { throw new RuntimeError('Variable "is_authenticated" does not exist.', 8, $this->source); })())) ? ("yellow") : (""));
             // line 9
             echo "    ";
         } elseif (twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 9, $this->source); })()), "enabled", [], "any", false, false, false, 9)) {
@@ -937,7 +937,7 @@ $context["voter_detail"], "vote", [], "array", false, false, false, 357), twig_c
 {% block toolbar %}
     {% if collector.token %}
         {% set is_authenticated = collector.enabled and collector.authenticated  %}
-        {% set color_code = is_authenticated ? '' : 'yellow' %}
+        {% set color_code = not is_authenticated ? 'yellow' %}
     {% elseif collector.enabled %}
         {% set color_code = collector.authenticatorManagerEnabled ? 'yellow' : 'red' %}
     {% else %}

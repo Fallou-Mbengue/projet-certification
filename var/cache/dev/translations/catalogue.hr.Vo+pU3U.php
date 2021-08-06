@@ -101,6 +101,7 @@ $catalogue = new MessageCatalogue('hr', array (
     'This value should satisfy at least one of the following constraints:' => 'Ova vrijednost mora zadovoljiti jedan od sljedećih ograničenja:',
     'Each element of this collection should satisfy its own set of constraints.' => 'Svaki element ove kolekcije mora zadovoljiti vlastiti skup ograničenja.',
     'This value is not a valid International Securities Identification Number (ISIN).' => 'Ova vrijednost nije ispravan međunarodni identifikacijski broj vrijednosnih papira (ISIN).',
+    'This value should be a valid expression.' => 'Ova vrijednost mora biti valjani izraz.',
     'This form should not contain extra fields.' => 'Ovaj obrazac ne smije sadržavati dodatna polja.',
     'The uploaded file was too large. Please try to upload a smaller file.' => 'Prenesena datoteka je prevelika. Molim pokušajte prenijeti manju datoteku.',
     'The CSRF token is invalid. Please try to resubmit the form.' => 'CSRF vrijednost nije ispravna. Pokušajte ponovo poslati obrazac.',

@@ -680,7 +680,7 @@ class __TwigTemplate_9ff57844f187401b48a8180a657dcfa389fa70bfaa2da99af6cbfbfeee1
 {% endblock %}
 
 {% block menu %}
-    <span class=\"label label-status-{{ collector.symfonyState == 'eol' ? 'red' : collector.symfonyState in ['eom', 'dev'] ? 'yellow' : '' }}\">
+    <span class=\"label label-status-{{ collector.symfonyState == 'eol' ? 'red' : collector.symfonyState in ['eom', 'dev'] ? 'yellow' }}\">
         <span class=\"icon\">{{ include('@WebProfiler/Icon/config.svg') }}</span>
         <strong>Configuration</strong>
     </span>

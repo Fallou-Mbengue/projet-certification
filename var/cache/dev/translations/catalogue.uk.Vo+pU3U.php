@@ -101,6 +101,7 @@ $catalogue = new MessageCatalogue('uk', array (
     'This value should satisfy at least one of the following constraints:' => 'Значення повинно задовольняти хоча б одному з наступних обмежень:',
     'Each element of this collection should satisfy its own set of constraints.' => 'Кожен елемент цієї колекції повинен задовольняти власному набору обмежень.',
     'This value is not a valid International Securities Identification Number (ISIN).' => 'Це значення не є дійсним міжнародним ідентифікаційним номером цінних паперів (ISIN).',
+    'This value should be a valid expression.' => 'Це значення має бути дійсним виразом.',
     'This form should not contain extra fields.' => 'Ця форма не повинна містити додаткових полів.',
     'The uploaded file was too large. Please try to upload a smaller file.' => 'Завантажений файл занадто великий. Будь ласка, спробуйте завантажити файл меншого розміру.',
     'The CSRF token is invalid. Please try to resubmit the form.' => 'CSRF значення недопустиме. Будь ласка, спробуйте відправити форму знову.',

@@ -140,7 +140,7 @@ class __TwigTemplate_af3adf5608a5bd5a19672ca1afb3787a32557d92598882e36cab4546d70
 
 {% block toolbar %}
     {% set icon %}
-        {% set status_color = (collector.memory / 1024 / 1024) > 50 ? 'yellow' : '' %}
+        {% set status_color = (collector.memory / 1024 / 1024) > 50 ? 'yellow' %}
         {{ include('@WebProfiler/Icon/memory.svg') }}
         <span class=\"sf-toolbar-value\">{{ '%.1f'|format(collector.memory / 1024 / 1024) }}</span>
         <span class=\"sf-toolbar-label\">MiB</span>

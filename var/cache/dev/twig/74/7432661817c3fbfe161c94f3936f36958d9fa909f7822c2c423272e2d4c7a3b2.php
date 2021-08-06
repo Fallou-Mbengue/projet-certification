@@ -41,7 +41,7 @@ class __TwigTemplate_495a9609c626ebc451a0a7902e646bd7ac5d5a5a6375ae82b56705e7ad6
 
         // line 1
         echo ".container {
-    max-width: auto;
+    max-width: none;
     margin: 0;
     padding: 0;
 }
@@ -70,7 +70,7 @@ class __TwigTemplate_495a9609c626ebc451a0a7902e646bd7ac5d5a5a6375ae82b56705e7ad6
 }
 
 .exception-message-wrapper .container {
-    min-height: auto;
+    min-height: unset;
 }
 ";
         
@@ -94,7 +94,7 @@ class __TwigTemplate_495a9609c626ebc451a0a7902e646bd7ac5d5a5a6375ae82b56705e7ad6
     public function getSourceContext()
     {
         return new Source(".container {
-    max-width: auto;
+    max-width: none;
     margin: 0;
     padding: 0;
 }
@@ -123,7 +123,7 @@ class __TwigTemplate_495a9609c626ebc451a0a7902e646bd7ac5d5a5a6375ae82b56705e7ad6
 }
 
 .exception-message-wrapper .container {
-    min-height: auto;
+    min-height: unset;
 }
 ", "@WebProfiler/Collector/exception.css.twig", "/Users/retina/Desktop/git/projet-certification/vendor/symfony/web-profiler-bundle/Resources/views/Collector/exception.css.twig");
     }
