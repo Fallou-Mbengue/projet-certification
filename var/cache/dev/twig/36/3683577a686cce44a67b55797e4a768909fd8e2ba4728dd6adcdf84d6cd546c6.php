@@ -960,6 +960,6 @@ class __TwigTemplate_f3139bce62933a01bc73b851a25ad1124a148a8f18c0a5666764faa8d91
 
 
 {% endblock %}
-", "home/index.html.twig", "/Applications/XAMPP/xamppfiles/htdocs/medis/templates/home/index.html.twig");
+", "home/index.html.twig", "/Users/retina/Desktop/git/projet-certification/templates/home/index.html.twig");
     }
 }
