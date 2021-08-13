@@ -1710,6 +1710,8 @@ class ComposerStaticInit0a1b4b7f9ebb28bc00f76c07b493446c
         'Doctrine\\Persistence\\Proxy' => __DIR__ . '/..' . '/doctrine/persistence/lib/Doctrine/Persistence/Proxy.php',
         'Doctrine\\Persistence\\Reflection\\RuntimePublicReflectionProperty' => __DIR__ . '/..' . '/doctrine/persistence/lib/Doctrine/Persistence/Reflection/RuntimePublicReflectionProperty.php',
         'Doctrine\\Persistence\\Reflection\\TypedNoDefaultReflectionProperty' => __DIR__ . '/..' . '/doctrine/persistence/lib/Doctrine/Persistence/Reflection/TypedNoDefaultReflectionProperty.php',
+        'Doctrine\\Persistence\\Reflection\\TypedNoDefaultReflectionPropertyBase' => __DIR__ . '/..' . '/doctrine/persistence/lib/Doctrine/Persistence/Reflection/TypedNoDefaultReflectionPropertyBase.php',
+        'Doctrine\\Persistence\\Reflection\\TypedNoDefaultRuntimePublicReflectionProperty' => __DIR__ . '/..' . '/doctrine/persistence/lib/Doctrine/Persistence/Reflection/TypedNoDefaultRuntimePublicReflectionProperty.php',
         'Doctrine\\SqlFormatter\\CliHighlighter' => __DIR__ . '/..' . '/doctrine/sql-formatter/src/CliHighlighter.php',
         'Doctrine\\SqlFormatter\\Cursor' => __DIR__ . '/..' . '/doctrine/sql-formatter/src/Cursor.php',
         'Doctrine\\SqlFormatter\\Highlighter' => __DIR__ . '/..' . '/doctrine/sql-formatter/src/Highlighter.php',

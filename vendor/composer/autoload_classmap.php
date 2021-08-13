@@ -1114,6 +1114,8 @@ return array(
     'Doctrine\\Persistence\\Proxy' => $vendorDir . '/doctrine/persistence/lib/Doctrine/Persistence/Proxy.php',
     'Doctrine\\Persistence\\Reflection\\RuntimePublicReflectionProperty' => $vendorDir . '/doctrine/persistence/lib/Doctrine/Persistence/Reflection/RuntimePublicReflectionProperty.php',
     'Doctrine\\Persistence\\Reflection\\TypedNoDefaultReflectionProperty' => $vendorDir . '/doctrine/persistence/lib/Doctrine/Persistence/Reflection/TypedNoDefaultReflectionProperty.php',
+    'Doctrine\\Persistence\\Reflection\\TypedNoDefaultReflectionPropertyBase' => $vendorDir . '/doctrine/persistence/lib/Doctrine/Persistence/Reflection/TypedNoDefaultReflectionPropertyBase.php',
+    'Doctrine\\Persistence\\Reflection\\TypedNoDefaultRuntimePublicReflectionProperty' => $vendorDir . '/doctrine/persistence/lib/Doctrine/Persistence/Reflection/TypedNoDefaultRuntimePublicReflectionProperty.php',
     'Doctrine\\SqlFormatter\\CliHighlighter' => $vendorDir . '/doctrine/sql-formatter/src/CliHighlighter.php',
     'Doctrine\\SqlFormatter\\Cursor' => $vendorDir . '/doctrine/sql-formatter/src/Cursor.php',
     'Doctrine\\SqlFormatter\\Highlighter' => $vendorDir . '/doctrine/sql-formatter/src/Highlighter.php',
