@@ -126,7 +126,7 @@ class __TwigTemplate_d93f48cd51c0a5ca23910b4397baf23b8d1d99b9e2a09c5bc79b56b857f
         // line 31
         echo "
 \t<section id=\"appointment\" class=\"appointment section-bg\">
-\t\t<div class=\"container\" data-aos=\"fade-up\">
+\t\t<div class=\"container w-50\" data-aos=\"fade-up\">
 \t\t\t<div class=\"section-title\">
 \t\t\t\t<h2>Inscription Nouveaux Patient</h2>
 \t\t\t</div>
@@ -242,7 +242,7 @@ class __TwigTemplate_d93f48cd51c0a5ca23910b4397baf23b8d1d99b9e2a09c5bc79b56b857f
 \t{% endfor %}
 
 \t<section id=\"appointment\" class=\"appointment section-bg\">
-\t\t<div class=\"container\" data-aos=\"fade-up\">
+\t\t<div class=\"container w-50\" data-aos=\"fade-up\">
 \t\t\t<div class=\"section-title\">
 \t\t\t\t<h2>Inscription Nouveaux Patient</h2>
 \t\t\t</div>
