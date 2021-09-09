@@ -81,14 +81,20 @@
 
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
-          <li><a class="nav-link scrollto " href="/">Acceuil</a></li>
-          <li><a class="nav-link scrollto" href="#about">À PROPOS DE NOUS</a></li>
-          <li><a class="nav-link scrollto" href="#services">Services</a></li>
-          <li><a class="nav-link scrollto" href="#departments">Patient</a></li>
-          <li><a class="nav-link scrollto" href="#doctors">MÉDECINS</a></li>
-		  <li><a class="nav-link scrollto" href="/login">Se connecter</a></li>
-		  <li><a class="nav-link scrollto" href="/register">S'inscrire</a></li>
-		  <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+		{% if app.user %}
+          
+          <li><a href="/admin/patient">Patient</a></li>
+          <li><a class="nav-link scrollto" href="#doctors">MÉDECIN</a></li>
+		  <li><a class="nav-link scrollto" href="{{path('app_logout')}}">Deconnection</a></li>
+		  
+		  {% else %}
+		    <li><a class="nav-link scrollto " href="/">Acceuil</a></li>
+			<li><a class="nav-link scrollto" href="#about">À PROPOS DE NOUS</a></li>
+			<li><a class="nav-link scrollto" href="#services">Services</a></li>
+			<li><a class="nav-link scrollto" href="/login">Se connecter</a></li>
+		    <li><a class="nav-link scrollto" href="/register">S'inscrire</a></li>
+			<li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+		  {% endif %}
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->

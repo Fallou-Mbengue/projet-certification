@@ -17,8 +17,11 @@ class PatientCrudController extends AbstractCrudController
     {
         return [
             IdField::new('id'),
-            TextField::new('title'),
-            TextEditorField::new('description'),
+            TextField::new('Prenom'),
+            TextField::new('Nom'),
+            EmailField::new('Email'),
+            NumberField::new('Telephone'),
+            TextField::new('Adresse'),
         ];
     }
     */
