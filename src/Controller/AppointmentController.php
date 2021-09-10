@@ -117,7 +117,7 @@ class AppointmentController extends AbstractController
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($appointment);
                 $em->flush();
-                return $this->redirectToRoute('home');
+                return $this->redirectToRoute('admin_patient');
             }
             return $this->render('appointment/new.html.twig', [
                 'form' => $form->createView()

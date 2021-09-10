@@ -3,10 +3,11 @@
 namespace App\Controller;
 
 use App\Entity\Patient;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Repository\PatientRepository;
 use Symfony\Component\BrowserKit\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class AdminPatientController extends AbstractController
 {
@@ -76,6 +77,19 @@ class AdminPatientController extends AbstractController
         
         $this->addFlash('success', 'Patient supprimer!');
         return $this->redirectToRoute('admin_patient');
+    }
+
+    /**
+     * @Route("/admin/patient", name="admin_patient")
+     */
+    public function indexPatient(PatientRepository $patientRepository): Response
+    {
+        $id = $this->getUser('id');
+        $patient = $patientRepository->find($id);
+        return $this->render('home/view.html.twig',[
+            'patient' => $patient
+
+        ]);
     }
 }
  

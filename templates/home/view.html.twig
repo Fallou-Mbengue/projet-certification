@@ -1,0 +1,93 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}View
+{% endblock %}
+
+{% block body %}
+
+	<!-- ======= Hero Section ======= -->
+	<section id="hero">
+		<div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+			<ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+
+			<div
+				class="carousel-inner" role="listbox">
+
+				<!-- Slide 1 -->
+				<div class="carousel-item active" style="background-image: url(assets/img/slide/irm1.jpg)">
+					<div class="container">
+						<h1>CIDIS</h1>
+						<h3 style="color: black;">Centre D'imagerie Diagnostique et Interventionnelle De Soumbedioune</h3>
+						<a href="#" class="btn-get-started scrollto"><h5>Vos Informations</h5></a>
+					</div>
+				</div>
+			</div>
+
+			<a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+				<span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+			</a>
+
+			<a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+				<span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+			</a>
+
+		</div>
+	</section>
+	<!-- End Hero -->
+
+	<!-- ========= View patient -->
+    <section class="container">
+    <div class="card text-center">
+  <div class="card-header">
+    Featured
+  </div>
+  <div class="card-body">
+    <h3 class="card-title">Information Patient</h3>
+    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+    <ul class="list-group list-group-flush">
+	 <li class="list-group-item">Prénom : {{patient.prenom}}</p></li>
+	 <li class="list-group-item">Nom : {{patient.nom}}</li>
+     <li class="list-group-item">Adresse : {{patient.adresse}}</li>
+     <li class="list-group-item">Date de Naissance : {{patient.naissance|date('d-m-Y')}}</li>
+     <li class="list-group-item">Email : {{patient.email}}</li>
+     <li class="list-group-item">Téléphone : {{patient.telephone}}</li>
+	</ul>
+  </div>
+  <div class="card-footer text-muted">
+  </div>
+</div>
+    </section>
+    <h2 class="text-center"> Rendez-vous Effectués </h2>
+	<section class="container">
+		<div class="row">
+            {% for appointment in patient.appointment %}
+                
+			 <div class="col-sm-6 mb-4">
+				<div class="card">
+					<div class="card-body">
+						<h3 class="card-title text-center">Détail Rendez-vous {{appointment.id}} </h3>
+						<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        <ul class="list-group list-group-flush">
+							<li class="list-group-item"> Date de Rendez-vous : {{appointment.DateRV|date('d-m-Y')}}</p></li>
+                            <li class="list-group-item"> Service : {{appointment.service}}</p></li>
+							<li class="list-group-item">Examen : {{appointment.examen}}</li>
+                            <li class="list-group-item">Type Examen : {{appointment.typeExamen}}</li>
+                            <li class="list-group-item">Presripteur : {{appointment.prescripteur}}</li>
+                            <li class="list-group-item">Heure de rendez-vous : {{appointment.heure}}</li>
+						</ul>
+						<div class="text-center">
+						    <a href="{{path('edit_appointment',{'id': appointment.id})}}" class="btn btn-success">
+							 <i class="fas fa-edit"></i>
+						    </a>
+						    <a href="{{path('delete_appointment',{'id': appointment.id})}}" class="btn btn-danger">
+							 <i class="fas fa-trash"></i>
+						    </a>			
+						</div>
+					</div>
+				</div>
+			 </div>
+            {% endfor %}
+		</div>
+	</section>
+{% endblock %}
