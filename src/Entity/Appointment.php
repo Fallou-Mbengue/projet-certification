@@ -30,7 +30,7 @@ class Appointment
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $medecin;
+    private $prescripteur;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -87,14 +87,14 @@ class Appointment
         return $this;
     }
 
-    public function getMedecin(): ?string
+    public function getPrescripteur(): ?string
     {
-        return $this->medecin;
+        return $this->prescripteur;
     }
 
-    public function setMedecin(string $medecin): self
+    public function setPrescripteur(string $prescripteur): self
     {
-        $this->medecin = $medecin;
+        $this->prescripteur = $prescripteur;
 
         return $this;
     }

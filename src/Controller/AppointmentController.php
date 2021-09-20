@@ -82,8 +82,8 @@ class AppointmentController extends AbstractController
             ]
         ]
         )
-        ->add('medecin', ChoiceType::class, [
-            'label' => 'Médecin',
+        ->add('prescripteur', ChoiceType::class, [
+            'label' => 'Prescripteur',
             'choices' => [
                 'Choisissez un medecin' => 'medecin',
                 'Dr Mbengue' => 'Dr Mbengue',
@@ -109,7 +109,7 @@ class AppointmentController extends AbstractController
                 $appointment->setHeure($data['heure']);
                 $appointment->setTypeExamen($data['type_examen']);
                 $appointment->setExamen($data['examen']);
-                $appointment->setMedecin($data['medecin']);
+                $appointment->setPrescripteur($data['prescripteur']);
                 $appointment->setMessage($data['message']);
                 $appointment->setPatient($this->getUser());
 
