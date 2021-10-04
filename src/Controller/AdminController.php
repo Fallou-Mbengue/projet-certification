@@ -80,7 +80,7 @@ class AdminPatientController extends AbstractController
     }
 
     /**
-     * @Route("/admin/patient", name="admin_patient")
+     * @Route("/show/patient", name="show_patient")
      */
     public function indexPatient(PatientRepository $patientRepository): Response
     {
