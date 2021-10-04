@@ -254,6 +254,7 @@
       <parameter>main</parameter>
     </parameter>
     <parameter key="easyadmin.config" type="collection"/>
+    <parameter key="maker.compatible_check.doctrine.supports_attributes">true</parameter>
     <parameter key="data_collector.templates" type="collection">
       <parameter key="data_collector.request" type="collection">
         <parameter>request</parameter>
@@ -534,10 +535,10 @@
         <argument key="cache.annotations" type="service" id="cache.annotations" on-invalid="ignore_uninitialized"/>
         <argument key="cache.property_info" type="service" id="cache.property_info" on-invalid="ignore_uninitialized"/>
         <argument key="form.choice_list_factory.cached" type="service" id="form.choice_list_factory.cached" on-invalid="ignore_uninitialized"/>
+        <argument key="mailer.message_logger_listener" type="service" id="mailer.message_logger_listener" on-invalid="ignore_uninitialized"/>
         <argument key="cache.validator_expression_language" type="service" id="cache.validator_expression_language" on-invalid="ignore_uninitialized"/>
         <argument key="profiler" type="service" id="profiler" on-invalid="ignore_uninitialized"/>
         <argument key="debug.validator" type="service" id="debug.validator" on-invalid="ignore_uninitialized"/>
-        <argument key="mailer.message_logger_listener" type="service" id="mailer.message_logger_listener" on-invalid="ignore_uninitialized"/>
         <argument key="debug.stopwatch" type="service" id="debug.stopwatch" on-invalid="ignore_uninitialized"/>
         <argument key="debug.event_dispatcher" type="service" id="debug.event_dispatcher" on-invalid="ignore_uninitialized"/>
         <argument key="monolog.handler.main" type="service" id="monolog.handler.main" on-invalid="ignore_uninitialized"/>
@@ -569,6 +570,9 @@
         <argument key="form.choice_list_factory.cached" type="collection">
           <argument>reset</argument>
         </argument>
+        <argument key="mailer.message_logger_listener" type="collection">
+          <argument>reset</argument>
+        </argument>
         <argument key="cache.validator_expression_language" type="collection">
           <argument>reset</argument>
         </argument>
@@ -576,9 +580,6 @@
           <argument>reset</argument>
         </argument>
         <argument key="debug.validator" type="collection">
-          <argument>reset</argument>
-        </argument>
-        <argument key="mailer.message_logger_listener" type="collection">
           <argument>reset</argument>
         </argument>
         <argument key="debug.stopwatch" type="collection">
@@ -850,7 +851,7 @@
     <service id="console.command.event_dispatcher_debug" class="Symfony\Bundle\FrameworkBundle\Command\EventDispatcherDebugCommand">
       <tag name="console.command"/>
       <tag name="container.no_preload"/>
-      <argument type="service" id=".service_locator.HtipwlH"/>
+      <argument type="service" id=".service_locator.jlyTfzM"/>
       <call method="setName">
         <argument>debug:event-dispatcher</argument>
       </call>
@@ -1595,6 +1596,10 @@
       <argument>null</argument>
       <argument>null</argument>
     </service>
+    <service id="mailer.message_logger_listener" class="Symfony\Component\Mailer\EventListener\MessageLoggerListener">
+      <tag name="kernel.event_subscriber"/>
+      <tag name="kernel.reset" method="reset"/>
+    </service>
     <service id="mailer.transport_factory.abstract" class="Symfony\Component\Mailer\Transport\AbstractTransportFactory" abstract="true">
       <tag name="monolog.logger" channel="mailer"/>
       <argument type="service" id="debug.event_dispatcher"/>
@@ -1929,6 +1934,7 @@
           <argument key="et" type="collection">
             <argument>/Users/retina/Desktop/Github/git/projet-certification/vendor/symfony/validator/Resources/translations/validators.et.xlf</argument>
             <argument>/Users/retina/Desktop/Github/git/projet-certification/vendor/symfony/form/Resources/translations/validators.et.xlf</argument>
+            <argument>/Users/retina/Desktop/Github/git/projet-certification/vendor/symfony/security-core/Resources/translations/security.et.xlf</argument>
           </argument>
           <argument key="eu" type="collection">
             <argument>/Users/retina/Desktop/Github/git/projet-certification/vendor/symfony/validator/Resources/translations/validators.eu.xlf</argument>
@@ -2020,6 +2026,11 @@
             <argument>/Users/retina/Desktop/Github/git/projet-certification/vendor/symfony/validator/Resources/translations/validators.mn.xlf</argument>
             <argument>/Users/retina/Desktop/Github/git/projet-certification/vendor/symfony/form/Resources/translations/validators.mn.xlf</argument>
             <argument>/Users/retina/Desktop/Github/git/projet-certification/vendor/symfony/security-core/Resources/translations/security.mn.xlf</argument>
+          </argument>
+          <argument key="my" type="collection">
+            <argument>/Users/retina/Desktop/Github/git/projet-certification/vendor/symfony/validator/Resources/translations/validators.my.xlf</argument>
+            <argument>/Users/retina/Desktop/Github/git/projet-certification/vendor/symfony/form/Resources/translations/validators.my.xlf</argument>
+            <argument>/Users/retina/Desktop/Github/git/projet-certification/vendor/symfony/security-core/Resources/translations/security.my.xlf</argument>
           </argument>
           <argument key="nb" type="collection">
             <argument>/Users/retina/Desktop/Github/git/projet-certification/vendor/symfony/validator/Resources/translations/validators.nb.xlf</argument>
@@ -2632,10 +2643,6 @@
       <tag name="data_collector" template="@WebProfiler/Collector/mailer.html.twig" id="mailer"/>
       <argument type="service" id="mailer.message_logger_listener"/>
     </service>
-    <service id="mailer.message_logger_listener" class="Symfony\Component\Mailer\EventListener\MessageLoggerListener">
-      <tag name="kernel.event_subscriber"/>
-      <tag name="kernel.reset" method="reset"/>
-    </service>
     <service id="data_collector.http_client" class="Symfony\Component\HttpClient\DataCollector\HttpClientDataCollector">
       <tag name="data_collector" template="@WebProfiler/Collector/http_client.html.twig" id="http_client" priority="250"/>
       <call method="registerClient">
@@ -2880,6 +2887,14 @@
         <argument>-255</argument>
       </call>
       <call method="addListener">
+        <argument>Symfony\Component\Mailer\Event\MessageEvent</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="mailer.message_logger_listener"/>
+          <argument>onMessage</argument>
+        </argument>
+        <argument>-255</argument>
+      </call>
+      <call method="addListener">
         <argument>Symfony\Component\Notifier\Event\MessageEvent</argument>
         <argument type="collection">
           <argument type="service_closure" id="notifier.logger_notification_listener"/>
@@ -2926,14 +2941,6 @@
           <argument>onKernelResponse</argument>
         </argument>
         <argument>0</argument>
-      </call>
-      <call method="addListener">
-        <argument>Symfony\Component\Mailer\Event\MessageEvent</argument>
-        <argument type="collection">
-          <argument type="service_closure" id="mailer.message_logger_listener"/>
-          <argument>onMessage</argument>
-        </argument>
-        <argument>-255</argument>
       </call>
       <call method="addListener">
         <argument>kernel.request</argument>
@@ -4312,7 +4319,9 @@
     </service>
     <service id="maker.doctrine_helper" class="Symfony\Bundle\MakerBundle\Doctrine\DoctrineHelper">
       <argument>App\Entity</argument>
+      <argument type="service" id="maker.php_compat_util"/>
       <argument type="service" id="doctrine" on-invalid="ignore"/>
+      <argument>true</argument>
       <argument type="collection">
         <argument key="default" type="collection">
           <argument type="collection">
@@ -4331,6 +4340,7 @@
       <argument type="service" id="maker.file_manager"/>
       <argument>App</argument>
       <argument type="service" id="maker.php_compat_util"/>
+      <argument type="service" id="maker.template_component_generator"/>
     </service>
     <service id="maker.entity_class_generator" class="Symfony\Bundle\MakerBundle\Doctrine\EntityClassGenerator">
       <argument type="service" id="maker.generator"/>
@@ -4346,6 +4356,9 @@
     </service>
     <service id="maker.php_compat_util" class="Symfony\Bundle\MakerBundle\Util\PhpCompatUtil">
       <argument type="service" id="maker.file_manager"/>
+    </service>
+    <service id="maker.template_component_generator" class="Symfony\Bundle\MakerBundle\Util\TemplateComponentGenerator">
+      <argument type="service" id="maker.php_compat_util"/>
     </service>
     <service id="maker.maker.make_authenticator" class="Symfony\Bundle\MakerBundle\Maker\MakeAuthenticator">
       <tag name="maker.command"/>
@@ -4442,6 +4455,7 @@
       <argument type="service" id="maker.user_class_builder"/>
       <argument type="service" id="maker.security_config_updater"/>
       <argument type="service" id="maker.entity_class_generator"/>
+      <argument type="service" id="maker.doctrine_helper"/>
     </service>
     <service id="maker.maker.make_migration" class="Symfony\Bundle\MakerBundle\Maker\MakeMigration">
       <tag name="maker.command"/>
@@ -5504,7 +5518,7 @@
       <tag name="container.no_preload"/>
       <argument>%security.firewalls%</argument>
       <argument type="service" id=".service_locator.zJyh7qS"/>
-      <argument type="service" id=".service_locator.HtipwlH"/>
+      <argument type="service" id=".service_locator.jlyTfzM"/>
       <argument type="collection">
         <argument key="main" type="collection">
           <argument type="service" id="App\Security\AppCustomAuthenticator"/>
@@ -5948,7 +5962,6 @@
     </service>
     <service id="EasyCorp\Bundle\EasyAdminBundle\Factory\FormFactory" class="EasyCorp\Bundle\EasyAdminBundle\Factory\FormFactory">
       <argument type="service" id="form.factory"/>
-      <argument type="service" id="EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator"/>
     </service>
     <service id="EasyCorp\Bundle\EasyAdminBundle\Factory\FieldFactory" class="EasyCorp\Bundle\EasyAdminBundle\Factory\FieldFactory">
       <argument type="service" id="EasyCorp\Bundle\EasyAdminBundle\Provider\AdminContextProvider"/>
@@ -7229,6 +7242,80 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.aq4MYft" method="withContext"/>
     </service>
+    <service id=".errored..service_locator.KfwZsne.Symfony\Component\HttpFoundation\Response" class="Symfony\Component\HttpFoundation\Response"/>
+    <service id=".errored..service_locator.KfbR3DY.Symfony\Component\Config\Loader\LoaderInterface" class="Symfony\Component\Config\Loader\LoaderInterface"/>
+    <service id=".errored..service_locator.4C0Bh8j.EasyCorp\Bundle\EasyAdminBundle\Config\Crud" class="EasyCorp\Bundle\EasyAdminBundle\Config\Crud"/>
+    <service id=".errored..service_locator.U4Bbnsn.EasyCorp\Bundle\EasyAdminBundle\Config\Assets" class="EasyCorp\Bundle\EasyAdminBundle\Config\Assets"/>
+    <service id=".errored..service_locator.CKlWSja.EasyCorp\Bundle\EasyAdminBundle\Config\Actions" class="EasyCorp\Bundle\EasyAdminBundle\Config\Actions"/>
+    <service id=".errored..service_locator.Nt.ogDb.EasyCorp\Bundle\EasyAdminBundle\Config\Filters" class="EasyCorp\Bundle\EasyAdminBundle\Config\Filters"/>
+    <service id=".errored..service_locator.ZOQ9v2d.EasyCorp\Bundle\EasyAdminBundle\Context\AdminContext" class="EasyCorp\Bundle\EasyAdminBundle\Context\AdminContext"/>
+    <service id=".errored..service_locator.AWPr3oy.EasyCorp\Bundle\EasyAdminBundle\Dto\BatchActionDto" class="EasyCorp\Bundle\EasyAdminBundle\Dto\BatchActionDto"/>
+    <service id=".errored..service_locator.AWPr3oy.EasyCorp\Bundle\EasyAdminBundle\Context\AdminContext" class="EasyCorp\Bundle\EasyAdminBundle\Context\AdminContext"/>
+    <service id=".errored..service_locator.rAlqQ78.EasyCorp\Bundle\EasyAdminBundle\Dto\EntityDto" class="EasyCorp\Bundle\EasyAdminBundle\Dto\EntityDto"/>
+    <service id=".errored..service_locator.rAlqQ78.EasyCorp\Bundle\EasyAdminBundle\Collection\FieldCollection" class="EasyCorp\Bundle\EasyAdminBundle\Collection\FieldCollection"/>
+    <service id=".errored..service_locator.rAlqQ78.EasyCorp\Bundle\EasyAdminBundle\Collection\FilterCollection" class="EasyCorp\Bundle\EasyAdminBundle\Collection\FilterCollection"/>
+    <service id=".errored..service_locator.rAlqQ78.EasyCorp\Bundle\EasyAdminBundle\Dto\SearchDto" class="EasyCorp\Bundle\EasyAdminBundle\Dto\SearchDto"/>
+    <service id=".errored..service_locator.tbo4Jjv.EasyCorp\Bundle\EasyAdminBundle\Context\AdminContext" class="EasyCorp\Bundle\EasyAdminBundle\Context\AdminContext"/>
+    <service id=".errored..service_locator.tbo4Jjv.EasyCorp\Bundle\EasyAdminBundle\Dto\EntityDto" class="EasyCorp\Bundle\EasyAdminBundle\Dto\EntityDto"/>
+    <service id=".errored..service_locator.tbo4Jjv.EasyCorp\Bundle\EasyAdminBundle\Config\KeyValueStore" class="EasyCorp\Bundle\EasyAdminBundle\Config\KeyValueStore"/>
+    <service id=".errored..service_locator.2dc0eaX.EasyCorp\Bundle\EasyAdminBundle\Config\KeyValueStore" class="EasyCorp\Bundle\EasyAdminBundle\Config\KeyValueStore"/>
+    <service id=".errored..service_locator.q6hA_O0.Symfony\Component\Security\Core\User\UserInterface" class="Symfony\Component\Security\Core\User\UserInterface"/>
+    <service id=".service_locator.XXv1IfR" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="reverse_container" type="service_closure" id="reverse_container" on-invalid="ignore_uninitialized"/>
+      </argument>
+    </service>
+    <service id=".service_locator.jlyTfzM" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="event_dispatcher" type="service_closure" id="debug.event_dispatcher"/>
+        <argument key="security.event_dispatcher.main" type="service_closure" id="security.event_dispatcher.main"/>
+      </argument>
+    </service>
+    <service id=".service_locator.qStIMoR" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="initialized_session" type="service_closure" id=".session.do-not-use" on-invalid="ignore_uninitialized"/>
+        <argument key="logger" type="service_closure" id="monolog.logger" on-invalid="ignore"/>
+        <argument key="session" type="service_closure" id=".session.do-not-use" on-invalid="ignore"/>
+        <argument key="session_collector" type="service_closure" id="data_collector.request.session_collector" on-invalid="ignore"/>
+      </argument>
+    </service>
+    <service id=".service_locator.clUEvlF" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="browser" type="service_closure" id="notifier.channel.browser"/>
+        <argument key="chat" type="service_closure" id="notifier.channel.chat"/>
+        <argument key="email" type="service_closure" id="notifier.channel.email"/>
+        <argument key="sms" type="service_closure" id="notifier.channel.sms"/>
+      </argument>
+    </service>
+    <service id=".service_locator.kODoftA" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="kernel" type="service_closure" id="kernel"/>
+      </argument>
+    </service>
+    <service id=".service_locator.1ZPWTRB" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="env" type="service_closure" id="container.getenv"/>
+      </argument>
+    </service>
+    <service id=".service_locator.LcVn9Hr" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="request_stack" type="service_closure" id="request_stack"/>
+      </argument>
+    </service>
+    <service id=".service_locator.aa1PbBb" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="security.authorization_checker" type="service_closure" id="security.authorization_checker"/>
+        <argument key="security.token_storage" type="service_closure" id="security.token_storage"/>
+      </argument>
+    </service>
     <service id="debug.validator.inner" class="Symfony\Component\Validator\Validator\ValidatorInterface">
       <factory service="validator.builder" method="getValidator"/>
     </service>
@@ -7310,80 +7397,6 @@
         <argument type="service" id="doctrine.orm.default_annotation_metadata_driver"/>
         <argument>App\Entity</argument>
       </call>
-    </service>
-    <service id=".errored..service_locator.KfwZsne.Symfony\Component\HttpFoundation\Response" class="Symfony\Component\HttpFoundation\Response"/>
-    <service id=".errored..service_locator.KfbR3DY.Symfony\Component\Config\Loader\LoaderInterface" class="Symfony\Component\Config\Loader\LoaderInterface"/>
-    <service id=".errored..service_locator.4C0Bh8j.EasyCorp\Bundle\EasyAdminBundle\Config\Crud" class="EasyCorp\Bundle\EasyAdminBundle\Config\Crud"/>
-    <service id=".errored..service_locator.U4Bbnsn.EasyCorp\Bundle\EasyAdminBundle\Config\Assets" class="EasyCorp\Bundle\EasyAdminBundle\Config\Assets"/>
-    <service id=".errored..service_locator.CKlWSja.EasyCorp\Bundle\EasyAdminBundle\Config\Actions" class="EasyCorp\Bundle\EasyAdminBundle\Config\Actions"/>
-    <service id=".errored..service_locator.Nt.ogDb.EasyCorp\Bundle\EasyAdminBundle\Config\Filters" class="EasyCorp\Bundle\EasyAdminBundle\Config\Filters"/>
-    <service id=".errored..service_locator.ZOQ9v2d.EasyCorp\Bundle\EasyAdminBundle\Context\AdminContext" class="EasyCorp\Bundle\EasyAdminBundle\Context\AdminContext"/>
-    <service id=".errored..service_locator.AWPr3oy.EasyCorp\Bundle\EasyAdminBundle\Dto\BatchActionDto" class="EasyCorp\Bundle\EasyAdminBundle\Dto\BatchActionDto"/>
-    <service id=".errored..service_locator.AWPr3oy.EasyCorp\Bundle\EasyAdminBundle\Context\AdminContext" class="EasyCorp\Bundle\EasyAdminBundle\Context\AdminContext"/>
-    <service id=".errored..service_locator.rAlqQ78.EasyCorp\Bundle\EasyAdminBundle\Dto\EntityDto" class="EasyCorp\Bundle\EasyAdminBundle\Dto\EntityDto"/>
-    <service id=".errored..service_locator.rAlqQ78.EasyCorp\Bundle\EasyAdminBundle\Collection\FieldCollection" class="EasyCorp\Bundle\EasyAdminBundle\Collection\FieldCollection"/>
-    <service id=".errored..service_locator.rAlqQ78.EasyCorp\Bundle\EasyAdminBundle\Collection\FilterCollection" class="EasyCorp\Bundle\EasyAdminBundle\Collection\FilterCollection"/>
-    <service id=".errored..service_locator.rAlqQ78.EasyCorp\Bundle\EasyAdminBundle\Dto\SearchDto" class="EasyCorp\Bundle\EasyAdminBundle\Dto\SearchDto"/>
-    <service id=".errored..service_locator.tbo4Jjv.EasyCorp\Bundle\EasyAdminBundle\Context\AdminContext" class="EasyCorp\Bundle\EasyAdminBundle\Context\AdminContext"/>
-    <service id=".errored..service_locator.tbo4Jjv.EasyCorp\Bundle\EasyAdminBundle\Dto\EntityDto" class="EasyCorp\Bundle\EasyAdminBundle\Dto\EntityDto"/>
-    <service id=".errored..service_locator.tbo4Jjv.EasyCorp\Bundle\EasyAdminBundle\Config\KeyValueStore" class="EasyCorp\Bundle\EasyAdminBundle\Config\KeyValueStore"/>
-    <service id=".errored..service_locator.2dc0eaX.EasyCorp\Bundle\EasyAdminBundle\Config\KeyValueStore" class="EasyCorp\Bundle\EasyAdminBundle\Config\KeyValueStore"/>
-    <service id=".errored..service_locator.q6hA_O0.Symfony\Component\Security\Core\User\UserInterface" class="Symfony\Component\Security\Core\User\UserInterface"/>
-    <service id=".service_locator.XXv1IfR" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="reverse_container" type="service_closure" id="reverse_container" on-invalid="ignore_uninitialized"/>
-      </argument>
-    </service>
-    <service id=".service_locator.HtipwlH" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="event_dispatcher" type="service_closure" id="debug.event_dispatcher"/>
-        <argument key="security.event_dispatcher.main" type="service_closure" id="security.event_dispatcher.main"/>
-      </argument>
-    </service>
-    <service id=".service_locator.qStIMoR" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="initialized_session" type="service_closure" id=".session.do-not-use" on-invalid="ignore_uninitialized"/>
-        <argument key="logger" type="service_closure" id="monolog.logger" on-invalid="ignore"/>
-        <argument key="session" type="service_closure" id=".session.do-not-use" on-invalid="ignore"/>
-        <argument key="session_collector" type="service_closure" id="data_collector.request.session_collector" on-invalid="ignore"/>
-      </argument>
-    </service>
-    <service id=".service_locator.clUEvlF" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="browser" type="service_closure" id="notifier.channel.browser"/>
-        <argument key="chat" type="service_closure" id="notifier.channel.chat"/>
-        <argument key="email" type="service_closure" id="notifier.channel.email"/>
-        <argument key="sms" type="service_closure" id="notifier.channel.sms"/>
-      </argument>
-    </service>
-    <service id=".service_locator.kODoftA" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="kernel" type="service_closure" id="kernel"/>
-      </argument>
-    </service>
-    <service id=".service_locator.1ZPWTRB" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="env" type="service_closure" id="container.getenv"/>
-      </argument>
-    </service>
-    <service id=".service_locator.LcVn9Hr" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="request_stack" type="service_closure" id="request_stack"/>
-      </argument>
-    </service>
-    <service id=".service_locator.aa1PbBb" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="security.authorization_checker" type="service_closure" id="security.authorization_checker"/>
-        <argument key="security.token_storage" type="service_closure" id="security.token_storage"/>
-      </argument>
     </service>
     <service id=".console.command.about.lazy" class="Symfony\Component\Console\Command\LazyCommand">
       <argument>about</argument>
@@ -8274,6 +8287,26 @@
     <service id="Psr\Log\LoggerInterface $doctrineLogger" alias="monolog.logger.doctrine"/>
     <service id="Psr\Log\LoggerInterface $securityLogger" alias="monolog.logger.security"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.KLVvNIq"/>
+    <service id=".service_locator.Mo0FXEU" alias="service_locator_EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator"/>
+    <service id=".service_locator._5g_Wvc" alias=".service_locator.KfwZsne"/>
+    <service id=".service_locator.JBAFp66" alias=".service_locator.KfbR3DY"/>
+    <service id=".service_locator.c1uUVZb" alias=".service_locator.4C0Bh8j"/>
+    <service id=".service_locator.wl5Ymvc" alias=".service_locator.U4Bbnsn"/>
+    <service id=".service_locator.2If3Gqv" alias=".service_locator.CKlWSja"/>
+    <service id=".service_locator.HoBWItU" alias=".service_locator.Nt.ogDb"/>
+    <service id=".service_locator.7VDoXVk" alias=".service_locator.ZOQ9v2d"/>
+    <service id=".service_locator.x16RqkD" alias=".service_locator.AWPr3oy"/>
+    <service id=".service_locator.p41iBpi" alias=".service_locator.rAlqQ78"/>
+    <service id=".service_locator.Er0_7SX" alias=".service_locator.l2QwsaZ"/>
+    <service id=".service_locator.lDJSw7o" alias=".service_locator.tbo4Jjv"/>
+    <service id=".service_locator.6KoT76J" alias=".service_locator.2dc0eaX"/>
+    <service id=".service_locator.vS1lpro" alias=".service_locator.q6hA_O0"/>
+    <service id=".service_locator.F2VpVm6" alias=".service_locator.pwZ6MTM"/>
+    <service id=".service_locator.kXCVHeG" alias=".service_locator.UDgw6Ol"/>
+    <service id=".service_locator.wKF4yn1" alias=".service_locator.anofQPJ"/>
+    <service id=".service_locator.AS8N0vz" alias=".service_locator.opmh_Hv"/>
+    <service id=".service_locator.oOijnfo" alias=".service_locator.wPLAlW_"/>
+    <service id=".service_locator.NK827YO" alias=".service_locator.W9y3dzm"/>
     <service id="validator" alias="debug.validator" public="true"/>
     <service id="translator.data_collector.inner" alias="translator.default"/>
     <service id="event_dispatcher" alias="debug.event_dispatcher" public="true"/>
@@ -8295,25 +8328,5 @@
     <service id="argument_resolver.not_tagged_controller" alias="debug.argument_resolver.not_tagged_controller"/>
     <service id="http_client" alias=".debug.http_client"/>
     <service id="doctrine.orm.default_metadata_driver" alias=".doctrine.orm.default_metadata_driver"/>
-    <service id=".service_locator.Mo0FXEU" alias="service_locator_EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator"/>
-    <service id=".service_locator._5g_Wvc" alias=".service_locator.KfwZsne"/>
-    <service id=".service_locator.JBAFp66" alias=".service_locator.KfbR3DY"/>
-    <service id=".service_locator.c1uUVZb" alias=".service_locator.4C0Bh8j"/>
-    <service id=".service_locator.wl5Ymvc" alias=".service_locator.U4Bbnsn"/>
-    <service id=".service_locator.2If3Gqv" alias=".service_locator.CKlWSja"/>
-    <service id=".service_locator.HoBWItU" alias=".service_locator.Nt.ogDb"/>
-    <service id=".service_locator.7VDoXVk" alias=".service_locator.ZOQ9v2d"/>
-    <service id=".service_locator.x16RqkD" alias=".service_locator.AWPr3oy"/>
-    <service id=".service_locator.p41iBpi" alias=".service_locator.rAlqQ78"/>
-    <service id=".service_locator.Er0_7SX" alias=".service_locator.l2QwsaZ"/>
-    <service id=".service_locator.lDJSw7o" alias=".service_locator.tbo4Jjv"/>
-    <service id=".service_locator.6KoT76J" alias=".service_locator.2dc0eaX"/>
-    <service id=".service_locator.vS1lpro" alias=".service_locator.q6hA_O0"/>
-    <service id=".service_locator.F2VpVm6" alias=".service_locator.pwZ6MTM"/>
-    <service id=".service_locator.kXCVHeG" alias=".service_locator.UDgw6Ol"/>
-    <service id=".service_locator.wKF4yn1" alias=".service_locator.anofQPJ"/>
-    <service id=".service_locator.AS8N0vz" alias=".service_locator.opmh_Hv"/>
-    <service id=".service_locator.oOijnfo" alias=".service_locator.wPLAlW_"/>
-    <service id=".service_locator.NK827YO" alias=".service_locator.W9y3dzm"/>
   </services>
 </container>
