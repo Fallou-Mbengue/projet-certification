@@ -3,16 +3,17 @@
 namespace App\Controller;
 
 use App\Entity\Patient;
-use App\Repository\PatientRepository;
-use Symfony\Component\BrowserKit\Request;
+use App\Form\RegistrationFormType;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use App\Repository\PatientRepository;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class AdminPatientController extends AbstractController
 {
     /**
-     * @Route("/admin/patient", name="admin_patient")
+     * @Route("/admin_projet", name="app_admin")
      */
     public function index(): Response
     {
@@ -27,19 +28,8 @@ class AdminPatientController extends AbstractController
     /**
      * @Route("/edit/{id}", name="edit_patient")
      */
-    public function editPatient(Request $request, $id)
-    {
-        $patient = $this->getDoctrine()->getRepository(Patient::class);
-        $patient = $patient->find($id);
-
-        if(!$patient)
-        {
-            throw $this->createNotFoundException(
-                ' Aucune patient avec identifiant id'.$id
-            );
-        }
-        
-        $patient = new Patient();
+    public function editPatient(Request $request, Patient $patient)
+    {  
         $form = $this->createForm(RegistrationFormType::class, $patient);
         $form->handleRequest($request);
 
@@ -48,7 +38,7 @@ class AdminPatientController extends AbstractController
             $em = $this->getDoctrine()->getManager();
             $em->persist($patient);
             $em->flush();
-            return $this->redirectToRoute('home');
+            return $this->redirectToRoute('app_login');
         }
 
         return $this->render('admin_patient/edit.html.twig',[
@@ -80,7 +70,7 @@ class AdminPatientController extends AbstractController
     }
 
     /**
-     * @Route("/show/patient", name="show_patient")
+     * @Route("/admin/patient", name="admin_patient")
      */
     public function indexPatient(PatientRepository $patientRepository): Response
     {
@@ -92,4 +82,3 @@ class AdminPatientController extends AbstractController
         ]);
     }
 }
- 

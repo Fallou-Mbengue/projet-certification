@@ -623,6 +623,7 @@ class ComposerStaticInit0a1b4b7f9ebb28bc00f76c07b493446c
     );
 
     public static $classMap = array (
+        'App\\Controller\\AdminPatientController' => __DIR__ . '/../..' . '/src/Controller/AdminPatientController.php',
         'App\\Controller\\Admin\\AppointmentCrudController' => __DIR__ . '/../..' . '/src/Controller/Admin/AppointmentCrudController.php',
         'App\\Controller\\Admin\\DashboardController' => __DIR__ . '/../..' . '/src/Controller/Admin/DashboardController.php',
         'App\\Controller\\Admin\\PatientCrudController' => __DIR__ . '/../..' . '/src/Controller/Admin/PatientCrudController.php',

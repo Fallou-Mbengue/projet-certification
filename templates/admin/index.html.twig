@@ -12,7 +12,7 @@
 				class="carousel-inner" role="listbox">
 
 				<!-- Slide 1 -->
-				<div class="carousel-item active" style="background-image: url(assets/img/slide/slide-1.jpg)">
+				<div class="carousel-item active" style="background-image: url(assets/img/slide/.jpg)">
 					<div class="container">
 						<h1>ADMINISTRATION</h1>
 						<h3 style="color: black;">Centre D'imagerie Diagnostique et Interventionnelle De Soumbedioune</h3>
@@ -37,6 +37,7 @@
 							<th>Email</th>
 							<th>Delete</th>
 							<th>Update</th>
+							<th>View</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -56,6 +57,11 @@
 								<td>
 									<a href="{{path('edit_patient',{'id': patient.id})}}" class="btn btn-success">
 										<i class="fas fa-edit"></i>
+									</a>
+								</td>
+								<td>
+									<a href="{{path('view_patient',{'id': patient.id})}}" class="btn btn btn-info">
+										<i class="fas fa-info"></i>
 									</a>
 								</td>
 							</tr>
